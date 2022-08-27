@@ -5,7 +5,7 @@ import { PUBLIC_TEST_VAR } from '$env/static/public'
 export async function load() {
 
 	const response = {
-    publicStaticVarValue: PUBLIC_TEST_VAR
+    testStaticPublic: PUBLIC_TEST_VAR
   }
 
 	if (response) {

@@ -5,7 +5,7 @@ import { TEST_VAR } from '$env/static/private'
 export async function load() {
 
 	const response = {
-    testStaticPrivate: TEST_VAR,
+    testStaticPrivate: TEST_VAR
   }
 
 	if (response) {
