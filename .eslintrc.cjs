@@ -9,7 +9,11 @@ module.exports = {
 		'svelte3/typescript': () => require('typescript')
 	},
 	rules: {
-		'import/no-extraneous-dependencies': off
+		'import/no-extraneous-dependencies': 0,
+		'import/prefer-default-export': 0,
+		'import/no-mutable-exports': 0,
+		'import/extensions': 0,
+		'import/no-unresolved': 0
 	},
 	parserOptions: {
 		sourceType: 'module',
