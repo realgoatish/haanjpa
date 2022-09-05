@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/open-sans": "^4.5.11",
 		"@portabletext/svelte": "^1.0.1",
 		"@realgoatish/svelte-every-layout": "^0.0.22",
 		"@sanity/client": "^3.3.6",
