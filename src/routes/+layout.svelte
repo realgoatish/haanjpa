@@ -3,9 +3,16 @@
 	import '@fontsource/open-sans';
 	import Header from '$lib/Header.svelte';
 	import Footer from '$lib/Footer.svelte';
+
+	/** @type {import('./$types').PageData} */
+	export let data;
+
+	$: ({ logo, navigationSections } = data);
+
+	$: console.log(`layout data on front end: ${JSON.stringify(data, null, 2)}`);
 </script>
 
-<Header />
+<Header data={{ logo, navigationSections }} />
 <slot />
 <Footer />
 

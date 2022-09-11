@@ -4,6 +4,12 @@ export default {
 	title: 'Page',
 	fields: [
 		{
+			name: 'event',
+			type: 'boolean',
+			title: 'Event page?',
+			initialValue: false
+		},
+		{
 			name: 'title',
 			type: 'string',
 			title: 'Title'
@@ -18,16 +24,6 @@ export default {
 			type: 'slug',
 			title: 'The Page URL On The Website'
 		},
-		// {
-		// 	name: 'author',
-		// 	type: 'reference',
-		// 	title: 'Author',
-		// 	to: [
-		// 		{
-		// 			type: 'person'
-		// 		}
-		// 	]
-		// },
 		{
 			name: 'body',
 			type: 'richText',

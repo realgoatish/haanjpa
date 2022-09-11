@@ -1,17 +1,22 @@
 export default {
 	name: 'navigation',
 	title: 'Navigation',
-	type: 'object',
+	type: 'document',
 	fields: [
+		{
+			name: 'navigationId',
+			type: 'slug',
+			title: 'Navigation ID (must be unique)'
+		},
 		{
 			name: 'title',
 			type: 'string',
 			title: 'Title'
 		},
 		{
-			name: 'navId',
-			type: 'slug',
-			title: 'Navigation Id'
+			name: 'description',
+			type: 'string',
+			title: 'Short Description'
 		},
 		{
 			name: 'items',

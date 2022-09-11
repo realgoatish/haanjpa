@@ -6,32 +6,33 @@
 
 	$: ({ value } = portableText);
 
-	$: console.log(`portableText component values from page: ${JSON.stringify(value, null, 2)}`);
+	// $: console.log(`portableText component values from page: ${JSON.stringify(value, null, 2)}`);
 </script>
 
 <div>
 	<Section>
-		<H>{value.title}</H>
-		<Grid wrapperElement="ul" space="var(--s-1)">
-			{#each value.items as item}
-				<Box padding="var(--s-2)">
-					<Stack>
-						<H level="+1"><a href={item.slug} alt="">{item.text}</a></H>
-						<p>{item.description}</p>
-					</Stack>
-				</Box>
-			{/each}
-		</Grid>
+		<Stack>
+			<Stack space="var(--s-2)">
+				<H>{value.title}</H>
+				{#if value.description}
+					<p>{value.description}</p>
+				{/if}
+			</Stack>
+
+			<div>
+				<Grid wrapperElement="ul" space="var(--s-1)">
+					{#each value.items as item}
+						<li>
+							<Box padding="var(--s-2)">
+								<Stack>
+									<H level="+1"><a href={item.slug}>{item.text}</a></H>
+									<p>{item.description}</p>
+								</Stack>
+							</Box>
+						</li>
+					{/each}
+				</Grid>
+			</div>
+		</Stack>
 	</Section>
 </div>
-
-<style>
-	div {
-		padding-block-start: var(--s2);
-		padding-block-end: var(--s2);
-	}
-
-	div :global(.stack) {
-		/* font-size: var(--font-size-small); */
-	}
-</style>

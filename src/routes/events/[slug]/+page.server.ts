@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import sanityClient from "@sanity/client";
 import { SANITY_WEBSITE_TOKEN, SANITY_PROJECT_ID, SANITY_DATASET, SANITY_API_VERSION } from '$env/static/private'
-import { homePageQuery } from '$lib/js/sanityQueries'
+import { eventQuery } from '$lib/js/sanityQueries'
 
 
 const client = sanityClient({
@@ -13,10 +13,9 @@ const client = sanityClient({
 });
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load() {
+export async function load({ params }) {
 
-	// const response = await client.fetch(homePageQuery)
-  const response = await client.fetch(homePageQuery)
+	const response = await client.fetch(eventQuery(params.slug))
 
 	if (response) {
 		return response;

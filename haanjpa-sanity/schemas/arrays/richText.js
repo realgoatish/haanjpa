@@ -9,7 +9,14 @@ export default {
 			type: 'figure'
 		},
 		{
-			type: 'navigation'
+			type: 'reference',
+			name: 'navigationReference',
+			to: [{ type: 'navigation' }]
+		},
+		{
+			type: 'reference',
+			name: 'eventReference',
+			to: [{ type: 'event' }]
 		}
 	]
 };

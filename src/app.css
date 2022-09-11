@@ -127,7 +127,8 @@ body {
 	--measure: 75ch;
 
 
-  --color-primary-h: 196;
+  /* --color-primary-h: 196; */
+  --color-primary-h: 0;
   --color-primary-s: 64%;
   --color-primary-l: 38%;
   --color-primary: hsl(
@@ -143,7 +144,7 @@ body {
   --color-primary--dark: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) - 15%));
 
   /* "white" version */
-  --color-primary--white: hsl(var(--color-primary-h), var(--color-primary-s), 90%);
+  --color-primary--white: hsl(var(--color-primary-h), var(--color-primary-s), 95%);
 
   /* shadow for the white version */
   --color-primary--white--shadow: var(--color-primary-h) clamp(0%, var(--color-primary-s), 50%) 50%; 
@@ -161,7 +162,7 @@ body {
   --color-secondary--dark: hsl(calc(var(--color-primary-h) + 180), var(--color-primary-s), calc(var(--color-primary-l) - 15%));
 
   /* "white" version */
-  --color-secondary--white: hsl(calc(var(--color-primary-h) + 180), var(--color-primary-s), 90%);
+  --color-secondary--white: hsl(calc(var(--color-primary-h) + 180), var(--color-primary-s), 95%);
 
   /* shadow for the white version */
   --color-secondary--white--shadow: calc(var(--color-primary-h) + 180) clamp(0%, var(--color-primary-s), 50%) 50%;
@@ -256,6 +257,10 @@ button {
 	padding: 1em 1.5em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+}
+
 h1 {
 	font-size: var(--font-size-big);
 }
@@ -277,13 +282,12 @@ ul {
 }
 
 .nav-link {
-  color: var(--color-primary--dark);
-  text-decoration: none;
+  color: var(--color-secondary--white);
 }
 
 .link-hover-effect:hover, .link-hover-effect:active {
-  color: var(--color-primary--white);
-  background-color: var(--color-primary--dark);
+  color: var(--color-primary--dark);
+  background-color: var(--color-primary--white);
 }
 
 .text-small {
