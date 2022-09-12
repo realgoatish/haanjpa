@@ -12,14 +12,22 @@
 		{#each data as navSection}
 			<li>
 				<H>
-					<a href={`/${navSection.slug}`} class="nav-link link-hover-effect">{navSection.title}</a>
+					<span>{navSection.title}</span>
 				</H>
 				<Cluster wrapperElement="ul">
 					{#each navSection.items as item}
-						<li><a href={item.href} class="nav-link link-hover-effect">{item.text}</a></li>
+						<li><a href={`${item.href}`} class="nav-link link-hover-effect">{item.text}</a></li>
 					{/each}
 				</Cluster>
 			</li>
 		{/each}
 	</Cluster>
 </nav>
+
+<style>
+	/* TODO move these styles where they belong */
+
+	nav span {
+		color: var(--color-secondary--light);
+	}
+</style>

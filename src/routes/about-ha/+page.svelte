@@ -36,7 +36,10 @@
 				components={{
 					block: {
 						h2: HeadingWrapper,
-						h3: HeadingWrapper
+						h3: HeadingWrapper,
+						h4: HeadingWrapper,
+						h5: HeadingWrapper,
+						h6: HeadingWrapper
 					}
 				}}
 			/>

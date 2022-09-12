@@ -18,7 +18,6 @@
 					<p>{value.description}</p>
 				{/if}
 			</Stack>
-
 			<div>
 				<Grid wrapperElement="ul" space="var(--s-1)">
 					{#each value.items as item}

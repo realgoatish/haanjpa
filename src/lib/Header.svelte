@@ -9,8 +9,8 @@
 
 <header>
 	<Center max="var(--measure)" gutters="var(--s-1)">
-		<Sidebar sideWidth="var(--s4)" side="left" space="var(--s2)">
-			<div slot="first-child">
+		<Sidebar sideWidth="var(--s4)" space="var(--s1)" side="left" contentMin="71%">
+			<div slot="first-child" class="logo-wrapper">
 				<Frame>
 					<img
 						alt={data.logo.alt}
@@ -29,5 +29,10 @@
 	header {
 		padding-block: var(--s0);
 		background: var(--color-secondary--black);
+	}
+
+	.logo-wrapper {
+		max-inline-size: clamp(25vw, 27vw, 30vw);
+		margin: 0 auto;
 	}
 </style>

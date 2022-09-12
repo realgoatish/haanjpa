@@ -42,7 +42,7 @@ s,
 samp,
 small,
 strike,
-strong,
+/* strong, */
 sub,
 sup,
 tt,
@@ -128,7 +128,7 @@ body {
 
 
   /* --color-primary-h: 196; */
-  --color-primary-h: 0;
+  --color-primary-h: 10;
   --color-primary-s: 64%;
   --color-primary-l: 38%;
   --color-primary: hsl(
@@ -275,6 +275,10 @@ h3 {
 
 ul {
   list-style: none;
+}
+
+.content-section--spacer {
+  padding-block: var(--s2);
 }
 
 .flex {

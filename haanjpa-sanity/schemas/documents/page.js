@@ -1,3 +1,5 @@
+import { slugWithType } from '../js/createSlugs';
+
 export default {
 	name: 'page',
 	type: 'document',
@@ -19,11 +21,8 @@ export default {
 			type: 'string',
 			title: 'Short Page Description'
 		},
-		{
-			name: 'slug',
-			type: 'slug',
-			title: 'The Page URL On The Website'
-		},
+		// slugWithType('events', 'title'),
+		slugWithType(),
 		{
 			name: 'body',
 			type: 'richText',
