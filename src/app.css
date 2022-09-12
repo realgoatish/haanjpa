@@ -128,7 +128,7 @@ body {
 
 
   /* --color-primary-h: 196; */
-  --color-primary-h: 10;
+  --color-primary-h: 160;
   --color-primary-s: 64%;
   --color-primary-l: 38%;
   --color-primary: hsl(
@@ -150,7 +150,7 @@ body {
   --color-primary--white--shadow: var(--color-primary-h) clamp(0%, var(--color-primary-s), 50%) 50%; 
 
   /* "black" version */
-  --color-primary--black: hsl(var(--color-primary-h), var(--color-primary-s), 10%); 
+  --color-primary--black: hsl(var(--color-primary-h), var(--color-primary-s), 5%); 
   
   /* complement */
   --color-secondary: hsl(calc(var(--color-primary-h) + 180), var(--color-primary-s), var(--color-primary-l));
@@ -168,7 +168,7 @@ body {
   --color-secondary--white--shadow: calc(var(--color-primary-h) + 180) clamp(0%, var(--color-primary-s), 50%) 50%;
   
   /* "black" version */
-  --color-secondary--black: hsl(calc(var(--color-primary-h) + 180), var(--color-primary-s), 10%); 
+  --color-secondary--black: hsl(calc(var(--color-primary-h) + 180), var(--color-primary-s), 5%); 
 
 
 
@@ -267,6 +267,7 @@ h1 {
 
 h2 {
 	font-size: var(--font-size-biggish);
+  color: var(--color-secondary--light);
 }
 
 h3 {
@@ -285,12 +286,25 @@ ul {
 	display: flex;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .nav-link {
   color: var(--color-secondary--white);
 }
 
-.link-hover-effect:hover, .link-hover-effect:active {
-  color: var(--color-primary--dark);
+.nav-link:hover, .nav-link:active {
+  color: var(--color-secondary--dark);
+  background-color: var(--color-primary--white);
+}
+
+.homepage-link {
+  color: var(--color-secondary--white);
+}
+
+.homepage-link:active {
+  color: var(--color-secondary--dark);
   background-color: var(--color-primary--white);
 }
 

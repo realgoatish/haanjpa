@@ -47,7 +47,12 @@ export const eventQuery = (slug) =>
   }[0]`;
 
 export const slugQuery = (slug) =>
-	`*[_type == "page" && slug.current == "${slug}" && event != true][0]`;
+	`*[_type == "page" && slug.current == "${slug}" && event != true]{
+    ...,
+    body[]{
+      ...
+    }
+  }[0]`;
 
 export const aboutPageQuery = `*[_type == "page" && title == "About HA"]{
   ...,

@@ -9,7 +9,7 @@
 
 <header>
 	<Center max="var(--measure)" gutters="var(--s-1)">
-		<Sidebar sideWidth="var(--s4)" space="var(--s1)" side="left" contentMin="71%">
+		<Sidebar sideWidth="var(--s4)" side="left" contentMin="73%">
 			<div slot="first-child" class="logo-wrapper">
 				<Frame>
 					<img
