@@ -20,7 +20,9 @@
 					/>
 				</Frame>
 			</div>
-			<Nav data={data.navigationSections} slot="last-child" />
+			<nav slot="last-child">
+				<Nav data={data.navigationSections} />
+			</nav>
 		</Sidebar>
 	</Center>
 </header>

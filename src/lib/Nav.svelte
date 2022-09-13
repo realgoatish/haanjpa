@@ -7,7 +7,7 @@
 	$: console.log(`data in Nav component: ${JSON.stringify(data, null, 2)}`);
 </script>
 
-<nav id="navigation">
+<div id="navigation">
 	<Cluster wrapperElement="ul" space="var(--s-2)">
 		{#each data as navSection}
 			<li>
@@ -22,4 +22,4 @@
 			</li>
 		{/each}
 	</Cluster>
-</nav>
+</div>

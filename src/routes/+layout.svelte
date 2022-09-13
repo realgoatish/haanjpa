@@ -14,7 +14,7 @@
 
 <Header data={{ logo, navigationSections }} />
 <slot />
-<Footer />
+<Footer data={navigationSections} />
 
 <style>
 	:global(h1),
