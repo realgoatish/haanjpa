@@ -1,5 +1,5 @@
 <script>
-	import { Grid, Box, Stack } from '@realgoatish/svelte-every-layout';
+	import { Grid, Stack } from '@realgoatish/svelte-every-layout';
 	import { H, Section } from 'tusculum';
 
 	export let portableText;

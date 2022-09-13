@@ -25,24 +25,26 @@
 </script>
 
 <main>
-	<Center max="var(--measure)" gutters="var(--s-1)">
-		<Stack>
-			<h1>{data.title}</h1>
+	<div class="content-section--spacer">
+		<Center max="var(--measure)" gutters="var(--s-1)">
+			<Stack>
+				<h1>{data.title}</h1>
 
-			<TableOfContents links={tocLinks} />
+				<TableOfContents links={tocLinks} />
 
-			<PortableText
-				value={data.body}
-				components={{
-					block: {
-						h2: HeadingWrapper,
-						h3: HeadingWrapper,
-						h4: HeadingWrapper,
-						h5: HeadingWrapper,
-						h6: HeadingWrapper
-					}
-				}}
-			/>
-		</Stack>
-	</Center>
+				<PortableText
+					value={data.body}
+					components={{
+						block: {
+							h2: HeadingWrapper,
+							h3: HeadingWrapper,
+							h4: HeadingWrapper,
+							h5: HeadingWrapper,
+							h6: HeadingWrapper
+						}
+					}}
+				/>
+			</Stack>
+		</Center>
+	</div>
 </main>

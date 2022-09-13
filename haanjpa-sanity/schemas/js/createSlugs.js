@@ -13,7 +13,7 @@ export function slugWithType() {
 		name: `slug`,
 		type: `slug`,
 		options: {
-			source: (doc) => `${doc.event ? '/events/' : ''}${doc.title}/`,
+			source: (doc) => `${doc.event ? '/event/' : ''}${doc.title}/`,
 			slugify: (value) => formatSlug(value)
 		},
 		validation: (Rule) =>
@@ -23,8 +23,8 @@ export function slugWithType() {
 				}
 
 				if (current && context.document.event) {
-					if (!current.startsWith('/events/')) {
-						return `Slug must begin with "/events/". Click "Generate" to reset.`;
+					if (!current.startsWith('/event/')) {
+						return `Slug must begin with "/event/". Click "Generate" to reset.`;
 					}
 
 					if (!current.endsWith('/')) {

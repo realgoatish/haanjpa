@@ -1,9 +1,7 @@
 <script>
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
-	import { H } from 'tusculum';
 	import { PortableText } from '@portabletext/svelte';
 	import Figure from '$lib/Figure.svelte';
-	import CustomParagraph from '$lib/CustomParagraph.svelte';
 	import HomePageNavigation from './HomePageNavigation.svelte';
 
 	/** @type {import('./$types').PageData} */
