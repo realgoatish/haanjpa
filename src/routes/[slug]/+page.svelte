@@ -4,6 +4,7 @@
 	import slug from 'slug';
 	import TableOfContents from '$lib/TableOfContents.svelte';
 	import HeadingWrapper from '$lib/HeadingWrapper.svelte';
+	import BreadcrumbNav from '$lib/BreadcrumbNav.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -28,6 +29,7 @@
 	<div class="content-section--spacer">
 		<Center max="var(--measure)" gutters="var(--s-1)">
 			<Stack>
+				<BreadcrumbNav />
 				<h1>{data.title}</h1>
 
 				{#if tocLinks.length !== 0}
