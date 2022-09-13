@@ -18,6 +18,7 @@
 	<div class="hero content-section--spacer">
 		<Center max="var(--measure)" gutters="var(--s-1)">
 			<Stack space="var(--s1)">
+				<h1>{data.title}</h1>
 				<PortableText
 					value={hero}
 					components={{

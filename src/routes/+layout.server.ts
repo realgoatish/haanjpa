@@ -1,20 +1,10 @@
 import { error } from '@sveltejs/kit';
-import sanityClient from '@sanity/client';
 import {
-	SANITY_WEBSITE_TOKEN,
 	SANITY_PROJECT_ID,
-	SANITY_DATASET,
-	SANITY_API_VERSION
+	SANITY_DATASET
 } from '$env/static/private';
 import { layoutQuery } from '$lib/js/sanityQueries';
-
-const client = sanityClient({
-	projectId: SANITY_PROJECT_ID,
-	dataset: SANITY_DATASET,
-	apiVersion: SANITY_API_VERSION,
-	token: SANITY_WEBSITE_TOKEN,
-	useCdn: false
-});
+import { client } from '$lib/js/sanityClient'
 
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
@@ -57,7 +47,9 @@ export async function load() {
   });
 
   if (response) {
-
     return response;
   }
+
+	throw error(404, 'Not found');
+
 }

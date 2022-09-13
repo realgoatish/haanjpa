@@ -12,7 +12,7 @@
 
 	$: tocLinks = data.body.reduce((acc, cv) => {
 		const container = [];
-		if (cv?.style?.match(/\b(h1|h2|h3|h4|h5|h6)\b/g)) {
+		if (cv?.style?.match(/\b(h2|h3|h4|h5|h6)\b/g)) {
 			const [children] = cv.children;
 			const obj = { text: children.text, href: slug(children.text) };
 			container.push(obj);
@@ -21,7 +21,7 @@
 		return acc;
 	}, []);
 
-	$: console.log(`markDefs found: ${JSON.stringify(tocLinks, null, 2)}`);
+	$: console.log(`tocLinks found: ${JSON.stringify(tocLinks, null, 2)}`);
 </script>
 
 <main>
@@ -30,7 +30,9 @@
 			<Stack>
 				<h1>{data.title}</h1>
 
-				<TableOfContents links={tocLinks} />
+				{#if tocLinks.length !== 0}
+					<TableOfContents links={tocLinks} />
+				{/if}
 
 				<PortableText
 					value={data.body}

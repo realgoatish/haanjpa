@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Grid, Box, Stack } from '@realgoatish/svelte-every-layout';
-	import { H, Section } from 'tusculum';
+	import { Stack } from '@realgoatish/svelte-every-layout';
+	import { H } from 'tusculum';
 	export let portableText;
 
 	$: ({ value } = portableText);

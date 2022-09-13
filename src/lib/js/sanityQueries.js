@@ -1,4 +1,5 @@
-export const homePageQuery = `*[_type == "page" && title == "Home"]{
+// TODO you'll have to query this by some field that's not editable long-term
+export const homePageQuery = `*[_type == "page" && title == "Welcome to HAANJPA.ORG"]{
   ...,
   body[]{
     ...,
@@ -53,10 +54,3 @@ export const slugQuery = (slug) =>
       ...
     }
   }[0]`;
-
-export const aboutPageQuery = `*[_type == "page" && title == "About HA"]{
-  ...,
-  body[]{
-    ...
-  }
-}[0]`;
