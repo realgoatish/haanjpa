@@ -24,7 +24,7 @@
 						<li class="card">
 							<Stack>
 								<H level="+1">
-									<a href={item.slug} class="flex space-between homepage-link link link--arrowed">
+									<a href={item.slug} class="flex space-between link link--arrowed homepage-link">
 										{item.text}
 										<svg
 											class="arrow-icon"
@@ -64,6 +64,8 @@
 	.card {
 		position: relative;
 		border-top: 1px solid var(--color-secondary);
+		padding-block: var(--s0);
+		min-block-size: var(--s3);
 	}
 
 	.card a::after {
@@ -79,15 +81,9 @@
 	}
 
 	.link {
-		/* color: #2175ff; */
-		/* color: var(--color-secondary--white); */
 		cursor: pointer;
 		font-weight: 400;
 	}
-
-	/* .link:hover {
-		background: none;
-	} */
 
 	.link--arrowed {
 		display: inline-block;

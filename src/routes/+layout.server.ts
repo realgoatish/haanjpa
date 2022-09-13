@@ -19,7 +19,7 @@ const client = sanityClient({
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
 
-	const response = await client.fetch(layoutQuery({ projectId: SANITY_PROJECT_ID, dataset: SANITY_DATASET })).then(data => {
+	const response = await client.fetch(layoutQuery()).then(data => {
     const { unprocessedImageUrl } = data.logo
 
     const lastIndexOfDash = unprocessedImageUrl.lastIndexOf('-')

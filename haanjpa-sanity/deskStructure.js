@@ -12,3 +12,10 @@ export default () => {
 			)
 		]);
 };
+
+// put this back in sanity.json.parts if you use this again
+
+// {
+// 	"name": "part:@sanity/desk-tool/structure",
+// 	"path": "./deskStructure.js"
+// }

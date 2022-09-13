@@ -21,6 +21,6 @@
 		<H>Description</H>
 		<p>{value.description}</p>
 		<H>Join Zoom Meeting</H>
-		<p>Zoom URL: {value.link}</p>
+		<p>Zoom URL: <a href={value.link}>{value.link}</a></p>
 	</Stack>
 </div>

@@ -18,7 +18,7 @@ export const homePageQuery = `*[_type == "page" && title == "Home"]{
   }
 }[0]`;
 
-export const layoutQuery = (projectSettings) => `*[_type == "siteSettings"]{
+export const layoutQuery = () => `*[_type == "siteSettings"]{
   title,
   description,
   logo{
