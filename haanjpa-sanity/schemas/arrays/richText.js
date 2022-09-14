@@ -23,6 +23,11 @@ export default {
 		},
 		{
 			type: 'reference',
+			name: 'meetingReference',
+			to: [{ type: 'meetingList' }]
+		},
+		{
+			type: 'reference',
 			name: 'eventReference',
 			to: [{ type: 'event' }]
 		}

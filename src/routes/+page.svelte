@@ -2,7 +2,7 @@
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
 	import { PortableText } from '@portabletext/svelte';
 	import Figure from '$lib/Figure.svelte';
-	import HomePageNavigation from './HomePageNavigation.svelte';
+	import HomeNavigationWidget from './HomeNavigationWidget.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -38,7 +38,7 @@
 					components={{
 						types: {
 							figure: Figure,
-							navigationReference: HomePageNavigation
+							navigationReference: HomeNavigationWidget
 						}
 					}}
 				/>

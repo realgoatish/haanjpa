@@ -51,6 +51,18 @@ export const slugQuery = (slug) =>
 	`*[_type == "page" && slug.current == "${slug}" && event != true]{
     ...,
     body[]{
-      ...
+      ...,
+      _type == "navigationReference" => @->{
+        title,
+        description,
+        items[]{
+          text,
+          description,
+          "href": navigationItemUrl.externalUrl
+        }
+      },
+      _type == "meetingReference" => @->{
+        items[]->
+      }
     }
   }[0]`;

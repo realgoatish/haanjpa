@@ -5,6 +5,8 @@
 	import TableOfContents from '$lib/TableOfContents.svelte';
 	import HeadingWrapper from '$lib/HeadingWrapper.svelte';
 	import BreadcrumbNav from '$lib/BreadcrumbNav.svelte';
+	import NavigationWidget from './NavigationWidget.svelte';
+	import MeetingList from './MeetingList.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -39,6 +41,10 @@
 				<PortableText
 					value={data.body}
 					components={{
+						types: {
+							navigationReference: NavigationWidget,
+							meetingReference: MeetingList
+						},
 						block: {
 							h2: HeadingWrapper,
 							h3: HeadingWrapper,

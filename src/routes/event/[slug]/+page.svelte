@@ -29,3 +29,9 @@
 		</Center>
 	</div>
 </main>
+
+<style>
+	main :global(ul) {
+		list-style: disc;
+	}
+</style>
