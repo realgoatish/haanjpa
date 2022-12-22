@@ -1,13 +1,13 @@
 <script>
 	import { Cluster } from '@realgoatish/svelte-every-layout';
 	import { H } from 'tusculum';
-	import { enhanceHeaderNav } from '$lib/js/actions';
 	export let data;
 
 	$: console.log(`data in Nav component: ${JSON.stringify(data, null, 2)}`);
 </script>
 
-<div id="navigation">
+<nav aria-labelledby="site-nav-label">
+	<h2 id="site-nav-label" class="screen-reader-only">Site</h2>
 	<Cluster wrapperElement="ul" space="var(--s-2)">
 		{#each data as navSection}
 			<li>
@@ -22,4 +22,4 @@
 			</li>
 		{/each}
 	</Cluster>
-</div>
+</nav>
