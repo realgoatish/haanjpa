@@ -8,6 +8,9 @@
 </script>
 
 <header>
+	<div class="screen-reader-only">
+		<a href="#main">Skip to content</a>
+	</div>
 	<Center max="var(--measure)" gutters="var(--s-1)">
 		<Sidebar sideWidth="var(--s4)" side="left" contentMin="73%">
 			<div slot="first-child" class="logo-wrapper">
@@ -20,9 +23,9 @@
 					/>
 				</Frame>
 			</div>
-			<nav slot="last-child">
+			<div slot="last-child">
 				<Nav data={data.navigationSections} />
-			</nav>
+			</div>
 		</Sidebar>
 	</Center>
 </header>
