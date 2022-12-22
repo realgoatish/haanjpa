@@ -14,7 +14,7 @@
 	$: console.log(`homePage data on the front end: ${JSON.stringify(data, null, 2)}`);
 </script>
 
-<main>
+<main id="main">
 	<div class="hero content-section--spacer">
 		<Center max="var(--measure)" gutters="var(--s-1)">
 			<Stack space="var(--s1)">

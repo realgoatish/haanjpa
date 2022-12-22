@@ -27,7 +27,7 @@
 	$: console.log(`tocLinks found: ${JSON.stringify(tocLinks, null, 2)}`);
 </script>
 
-<main>
+<main id="main">
 	<div class="content-section--spacer">
 		<Center max="var(--measure)" gutters="var(--s-1)">
 			<Stack>

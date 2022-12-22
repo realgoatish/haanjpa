@@ -11,7 +11,7 @@
 	$: console.log(`data received on page /events/[slug]: ${JSON.stringify(data, null, 2)}`);
 </script>
 
-<main>
+<main id="main">
 	<div class="content-section--spacer">
 		<Center max="var(--measure)" gutters="var(--s-1)">
 			<Stack>
