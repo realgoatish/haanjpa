@@ -8,7 +8,7 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	$: console.log(`data received on page /events/[slug]: ${JSON.stringify(data, null, 2)}`);
+	// $: console.log(`data received on page /events/[slug]: ${JSON.stringify(data, null, 2)}`);
 </script>
 
 <main id="main">

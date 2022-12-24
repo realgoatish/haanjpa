@@ -9,7 +9,7 @@
 
 	$: ({ logo, navigationSections } = data);
 
-	$: console.log(`layout data on front end: ${JSON.stringify(data, null, 2)}`);
+	// $: console.log(`layout data on front end: ${JSON.stringify(data, null, 2)}`);
 </script>
 
 <Header data={{ logo, navigationSections }} />

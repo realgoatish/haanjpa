@@ -25,9 +25,13 @@ export default {
 		},
 		{
 			name: 'description',
-			type: 'string',
-			title: 'Short Description'
+			type: 'richText'
 		},
+		// {
+		// 	name: 'description',
+		// 	type: 'string',
+		// 	title: 'Short Description'
+		// },
 		{
 			name: 'link',
 			type: 'url',

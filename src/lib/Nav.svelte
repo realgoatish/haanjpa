@@ -3,7 +3,7 @@
 	import { H } from 'tusculum';
 	export let data;
 
-	$: console.log(`data in Nav component: ${JSON.stringify(data, null, 2)}`);
+	// $: console.log(`data in Nav component: ${JSON.stringify(data, null, 2)}`);
 </script>
 
 <nav aria-labelledby="site-nav-label">

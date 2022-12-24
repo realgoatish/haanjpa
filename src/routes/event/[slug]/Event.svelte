@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Stack } from '@realgoatish/svelte-every-layout';
 	import { H } from 'tusculum';
+	import FlyerFigure from '$lib/FlyerFigure.svelte';
+	import { PortableText } from '@portabletext/svelte';
 	export let portableText;
 
 	$: ({ value } = portableText);
@@ -19,8 +21,18 @@
 		<H>Date/Time</H>
 		<p>{parsedDate}</p>
 		<H>Description</H>
-		<p>{value.description}</p>
-		<H>Join Zoom Meeting</H>
-		<p>Zoom URL: <a href={value.link}>{value.link}</a></p>
+		<!-- <p>{value.description}</p> -->
+		<PortableText
+			value={value.description}
+			components={{
+				types: {
+					figure: FlyerFigure
+				}
+			}}
+		/>
+		{#if value.link}
+			<H>Join Zoom Meeting</H>
+			<p>Zoom URL: <a href={value.link}>{value.link}</a></p>
+		{/if}
 	</Stack>
 </div>

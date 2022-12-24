@@ -4,7 +4,7 @@
 
 	export let data;
 
-	$: console.log(`props in header component: ${JSON.stringify(data, null, 2)}`);
+	// $: console.log(`props in header component: ${JSON.stringify(data, null, 2)}`);
 </script>
 
 <header>

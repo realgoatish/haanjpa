@@ -22,7 +22,7 @@ export async function load() {
 
     const sanityImageUrl = `https://cdn.sanity.io/images/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${strippedPrefix}`
 
-    console.log(sanityImageUrl)
+    // console.log(sanityImageUrl)
 
     const newLogo = {
       alt: data.logo.alt,
