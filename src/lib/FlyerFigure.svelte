@@ -1,5 +1,5 @@
 <script>
-	import { Frame, Center } from '@realgoatish/svelte-every-layout';
+	import { Frame } from '@realgoatish/svelte-every-layout';
 
 	export let portableText;
 
@@ -8,9 +8,6 @@
 	// $: console.log(`portableText value in Figure.svelte: ${JSON.stringify(value, null, 2)}`);
 </script>
 
-<!-- <Center>
-
-</Center> -->
 <div>
 	<Frame ratio="17:12">
 		<img

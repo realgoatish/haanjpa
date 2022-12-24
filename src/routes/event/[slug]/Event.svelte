@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Stack } from '@realgoatish/svelte-every-layout';
 	import { H } from 'tusculum';
-	import FlyerFigure from '$lib/FlyerFigure.svelte';
 	import { PortableText } from '@portabletext/svelte';
+	import FlyerFigure from '$lib/FlyerFigure.svelte';
 	export let portableText;
 
 	$: ({ value } = portableText);

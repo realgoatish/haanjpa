@@ -6,6 +6,8 @@ import {
 import { layoutQuery } from '$lib/js/sanityQueries';
 import { client } from '$lib/js/sanityClient'
 
+export const trailingSlash = 'always'
+
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
 

@@ -14,9 +14,8 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-vercel": "^1.0.0-next.68",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-vercel": "1.0.0",
+		"@sveltejs/kit": "1.0.0",
 		"@types/slug": "^5.0.3",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -35,7 +34,7 @@
 		"svelte-preprocess": "^4.10.6",
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
-		"vite": "^3.1.0-beta.1"
+		"vite": "^4.0.0"
 	},
 	"type": "module",
 	"dependencies": {

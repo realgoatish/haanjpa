@@ -55,7 +55,7 @@ export async function load({ url }) {
     // replace the image objects with matching _key properties on the cloned response
     // body with the new ones you just created
     // TODO the transformation above is working, but putting it onto the body here isn't
-    const newBody = data.body.map((obj) => processedDescriptions.find((o) => o._key === obj._key) || obj);
+    const newBody = data?.body?.map((obj) => processedDescriptions.find((o) => o._key === obj._key) || obj);
 
     data.body = newBody
 
