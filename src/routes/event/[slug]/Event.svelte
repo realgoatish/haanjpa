@@ -3,6 +3,7 @@
 	import { H } from 'tusculum';
 	import { PortableText } from '@portabletext/svelte';
 	import FlyerFigure from '$lib/FlyerFigure.svelte';
+
 	export let portableText;
 
 	$: ({ value } = portableText);
