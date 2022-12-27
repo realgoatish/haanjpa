@@ -11,6 +11,7 @@
 <div>
 	<Frame ratio="17:12">
 		<img
+			loading="lazy"
 			alt={value.alt}
 			srcset={`${value.image.desktop} 2400w, ${value.image.tablet} 1600w, ${value.image.mobile} 800w`}
 			sizes="50vw"
@@ -19,17 +20,8 @@
 	</Frame>
 </div>
 
-<!-- <style>
-	div {
-		width: max(295px, 35%);
-		height: 100%;
-		filter: drop-shadow(1px 2px 2px hsl(var(--color-primary--white--shadow) / 0.333))
-			drop-shadow(2px 4px 4px hsl(var(--color-primary--white--shadow) / 0.333))
-			drop-shadow(3px 6px 6px hsl(var(--color-primary--white--shadow) / 0.333));
-	}
-</style> -->
 <style>
 	div {
-		width: 30rem;
+		max-width: 30rem;
 	}
 </style>
