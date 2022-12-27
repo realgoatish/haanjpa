@@ -16,7 +16,7 @@
 				</H>
 				<Cluster wrapperElement="ul">
 					{#each navSection.items as item}
-						<li><a href={`${item.href}`} class="nav-link">{item.text}</a></li>
+						<li><a data-sveltekit-reload href={`${item.href}`} class="nav-link">{item.text}</a></li>
 					{/each}
 				</Cluster>
 			</li>
