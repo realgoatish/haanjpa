@@ -1,8 +1,8 @@
 import { error } from '@sveltejs/kit';
-import { slugQuery } from '$lib/js/sanityQueries'
-import { client } from '$lib/js/sanityClient'
+import { slugQuery } from '$lib/js/sanityQueries.server'
+import { client } from '$lib/js/sanityClient.server'
 
-/** @type {import('./$types').PageLoad} */
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ url }) {
 
   console.log(`url.pathname in /[slug]/+page.server: ${url.pathname}`)

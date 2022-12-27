@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { homePageQuery } from '$lib/js/sanityQueries'
-import { client } from '$lib/js/sanityClient'
+import { homePageQuery } from '$lib/js/sanityQueries.server'
+import { client } from '$lib/js/sanityClient.server'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {

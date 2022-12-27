@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import { eventQuery } from '$lib/js/sanityQueries'
-import { client } from '$lib/js/sanityClient'
-import { processBlockImageUrls } from '$lib/js/sanityImages'
+import { eventQuery } from '$lib/js/sanityQueries.server'
+import { client } from '$lib/js/sanityClient.server'
+import { processBlockImageUrls } from '$lib/js/sanityImages.server'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url }) {
@@ -11,22 +11,10 @@ export async function load({ url }) {
 
   const response = await client.fetch(eventQuery(url.pathname)).then(data => {
 
-    // const imageObjects = data?.body?.reduce((acc, cv) => {
-    //   if (cv.description) {
-    //     const hasImage = cv.description.find((item) => item?._type === 'figure' && item?.image)
-    //     acc.push(hasImage)
-    //   }
-    //   return acc
-    // }, [])
-  
-    // if (!imageObjects?.length) {
-    //   return data;
-    // }
+    const mutableData = data
 
-    // const processedDescriptions = data?.body?.filter((item) => item?.description?.find((child) => child?._type === 'figure' && child?.image))
+    const processedDescriptions = mutableData?.body?.map((section) => {
 
-    const processedDescriptions = data?.body?.map((section) => {
-      // get the image object(s) from section.description
       const descriptionImages = section?.description?.filter((item) => item?._type === 'figure' && item?.image)
 
       if (!descriptionImages?.length) {
@@ -45,21 +33,13 @@ export async function load({ url }) {
 
     })
 
+    const newBody = mutableData?.body?.map((obj) => processedDescriptions.find((o) => o._key === obj._key) || obj);
 
-    // console.log(`imageObjects before transformation: ${JSON.stringify(imageObjects, null, 2)}`)
+    mutableData.body = newBody
 
-    // const processedBlockImages = processBlockImageUrls(imageObjects)
+    console.log(`DATA: ${JSON.stringify(mutableData, null, 2)}`)
 
-    // console.log(`processedBlockImages after transformation: ${JSON.stringify(processedBlockImages, null, 2)}`)
-
-    // replace the image objects with matching _key properties on the cloned response
-    // body with the new ones you just created
-    // TODO the transformation above is working, but putting it onto the body here isn't
-    const newBody = data?.body?.map((obj) => processedDescriptions.find((o) => o._key === obj._key) || obj);
-
-    data.body = newBody
-
-    return data
+    return mutableData
   })
 
 	if (response) {

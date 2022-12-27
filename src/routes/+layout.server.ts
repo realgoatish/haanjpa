@@ -3,10 +3,11 @@ import {
 	SANITY_PROJECT_ID,
 	SANITY_DATASET
 } from '$env/static/private';
-import { layoutQuery } from '$lib/js/sanityQueries';
-import { client } from '$lib/js/sanityClient'
+import { layoutQuery } from '$lib/js/sanityQueries.server';
+import { client } from '$lib/js/sanityClient.server'
 
 export const trailingSlash = 'always'
+// export const prerender = true
 
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
