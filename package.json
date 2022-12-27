@@ -40,9 +40,9 @@
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.11",
 		"@portabletext/svelte": "^1.0.1",
-		"@realgoatish/svelte-every-layout": "^0.0.22",
-		"@sanity/client": "^3.3.6",
+		"@realgoatish/svelte-every-layout": "^0.0.23",
+		"@sanity/client": "^3.4.1",
 		"slug": "^8.0.0",
-		"tusculum": "^0.0.10"
+		"tusculum": "^0.0.17"
 	}
 }
