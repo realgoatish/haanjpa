@@ -61,8 +61,4 @@
 	main :global(h1) {
 		font-size: var(--font-size-biggish);
 	}
-
-	/* main :global(.box) {
-		filter: drop-shadow(0.5px 1px 1px hsl(var(--color-primary--white--shadow) / 0.7));
-	} */
 </style>

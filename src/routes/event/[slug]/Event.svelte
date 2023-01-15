@@ -8,7 +8,7 @@
 
 	$: ({ value } = portableText);
 
-	$: console.log(`portableText component values from page: ${JSON.stringify(value, null, 2)}`);
+	// $: console.log(`portableText component values from page: ${JSON.stringify(value, null, 2)}`);
 
 	$: parsedDate = new Date(Date.parse(value.date)).toLocaleString('en-US', {
 		timeZone: 'America/New_York',
