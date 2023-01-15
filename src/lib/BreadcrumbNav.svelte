@@ -3,7 +3,7 @@
 	import { H } from 'tusculum';
 	import { Cluster } from '@realgoatish/svelte-every-layout';
 
-	$: console.log(`$page: ${JSON.stringify($page, null, 2)}`);
+	// $: console.log(`$page: ${JSON.stringify($page, null, 2)}`);
 </script>
 
 <nav aria-labelledby="breadcrumb-navigation">
