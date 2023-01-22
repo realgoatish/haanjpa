@@ -41,9 +41,9 @@
 
 	const pageOutline = parseOutline(body);
 
-	$: console.log(
-		`tocLinks prop in TableOfContents component: ${JSON.stringify(pageOutline, null, 2)}`
-	);
+	// $: console.log(
+	// 	`tocLinks prop in TableOfContents component: ${JSON.stringify(pageOutline, null, 2)}`
+	// );
 
 	const getChildrenText = (props) =>
 		props.children.map((node) => (typeof node === 'string' ? node : node.text || '')).join('');
@@ -77,7 +77,7 @@
 		display: block;
 		list-style: disc outside none;
 		margin-block: 1em;
-		padding-inline-start: 15px;
+		padding-inline-start: 1.25em;
 	}
 
 	nav :global(ol) {
@@ -87,13 +87,13 @@
 	nav :global(ul ul),
 	nav :global(ol ul) {
 		list-style-type: circle;
-		margin-inline-start: 10px;
+		margin-inline-start: 1.25em;
 	}
 
 	nav :global(ol ol),
 	nav :global(ul ol) {
 		list-style-type: lower-roman;
-		margin-inline-start: 10px;
+		margin-inline-start: 1.25em;
 	}
 
 	nav :global(li) {
