@@ -4,9 +4,6 @@
 	$: ({ value } = portableText);
 
 	$: ({ listItem } = value);
-
-	// $: console.log(`'value' in ListWrapper component: ${JSON.stringify(value, null, 2)}`);
-	// $: console.log(`'listItem' in ListWrapper component: ${JSON.stringify(listItem, null, 2)}`);
 </script>
 
 {#if listItem === 'number'}
@@ -25,7 +22,7 @@
 		display: block;
 		list-style: disc outside none;
 		margin-block: 1em;
-		padding-inline-start: 15px;
+		padding-inline-start: 1.25em;
 	}
 
 	ol {
@@ -35,12 +32,12 @@
 	ul :global(ul),
 	ol :global(ul) {
 		list-style-type: circle;
-		margin-inline-start: 10px;
+		margin-inline-start: 1.25em;
 	}
 
 	ol :global(ol),
 	ul :global(ol) {
 		list-style-type: lower-roman;
-		margin-inline-start: 10px;
+		margin-inline-start: 1.25em;
 	}
 </style>

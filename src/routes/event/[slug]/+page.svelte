@@ -4,11 +4,11 @@
 	import Figure from '$lib/Figure.svelte';
 	import Event from './Event.svelte';
 	import BreadcrumbNav from '$lib/BreadcrumbNav.svelte';
+	import ListWrapper from '$lib/ListWrapper.svelte';
+	import ListItemWrapper from '$lib/ListItemWrapper.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-
-	// $: console.log(`data received on page /events/[slug]: ${JSON.stringify(data, null, 2)}`);
 </script>
 
 <main id="main">
@@ -22,6 +22,14 @@
 						types: {
 							figure: Figure,
 							event: Event
+						},
+						list: {
+							bullet: ListWrapper,
+							number: ListWrapper
+						},
+						listItem: {
+							bullet: ListItemWrapper,
+							number: ListItemWrapper
 						}
 					}}
 				/>
@@ -29,9 +37,3 @@
 		</Center>
 	</div>
 </main>
-
-<style>
-	main :global(ul) {
-		list-style: disc;
-	}
-</style>
