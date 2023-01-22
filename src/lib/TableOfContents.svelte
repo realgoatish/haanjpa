@@ -41,10 +41,6 @@
 
 	const pageOutline = parseOutline(body);
 
-	// $: console.log(
-	// 	`tocLinks prop in TableOfContents component: ${JSON.stringify(pageOutline, null, 2)}`
-	// );
-
 	const getChildrenText = (props) =>
 		props.children.map((node) => (typeof node === 'string' ? node : node.text || '')).join('');
 
