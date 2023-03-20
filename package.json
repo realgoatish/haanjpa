@@ -43,6 +43,7 @@
 		"@realgoatish/svelte-every-layout": "^0.0.23",
 		"@sanity/client": "^3.4.1",
 		"slug": "^8.0.0",
+		"somerset": "^0.0.2",
 		"tusculum": "^0.0.17"
 	}
 }
