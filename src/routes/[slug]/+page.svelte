@@ -1,6 +1,8 @@
 <script>
 	import { PortableText } from '@portabletext/svelte';
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
+	import { Somerset, BreadcrumbJsonLd } from 'somerset';
+	import { page } from '$app/stores';
 	import TableOfContents from '$lib/TableOfContents.svelte';
 	import HeadingWrapper from '$lib/HeadingWrapper.svelte';
 	import BreadcrumbNav from '$lib/BreadcrumbNav.svelte';
@@ -12,6 +14,27 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
+
+<Somerset
+	title={data.title}
+	description={data.description}
+	openGraph={{
+		type: 'website',
+		url: $page.url,
+		title: data.title,
+		description: data.description
+	}}
+/>
+
+<BreadcrumbJsonLd
+	itemListElements={[
+		{
+			position: 1,
+			name: 'Home',
+			item: `${$page.url.origin}/`
+		}
+	]}
+/>
 
 <main id="main">
 	<div class="content-section--spacer">
