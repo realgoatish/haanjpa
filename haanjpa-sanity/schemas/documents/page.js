@@ -21,7 +21,10 @@ export default {
 			type: 'string',
 			title: 'Short Page Description'
 		},
-		// slugWithType('events', 'title'),
+		{
+			name: 'figure',
+			type: 'figure'
+		},
 		slugWithType(),
 		{
 			name: 'body',
