@@ -1,6 +1,8 @@
 <script>
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
 	import { PortableText } from '@portabletext/svelte';
+	import { Somerset } from 'somerset';
+	import { page } from '$app/stores';
 	import Figure from '$lib/Figure.svelte';
 	import HomeNavigationWidget from './HomeNavigationWidget.svelte';
 
@@ -12,7 +14,19 @@
 	const hero = data.body.filter((item) => item._type !== 'navigationReference');
 
 	$: console.log(`homePage data on the front end: ${JSON.stringify(data, null, 2)}`);
+	$: console.log(`$page on homePage: ${JSON.stringify($page, null, 2)}`);
 </script>
+
+<Somerset
+	title={data.title}
+	description={data.description}
+	openGraph={{
+		type: 'website',
+		url: $page.url,
+		title: data.title,
+		description: data.description
+	}}
+/>
 
 <main id="main">
 	<div class="hero content-section--spacer">
