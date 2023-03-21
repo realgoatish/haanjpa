@@ -66,3 +66,8 @@ export const slugQuery = (slug) =>
       }
     }
   }[0]`;
+
+export const sitemapQuery = () =>
+	`*[_type == "page"]{
+    slug
+  }`;
