@@ -22,7 +22,7 @@ export default {
 			title: 'Short Page Description'
 		},
 		{
-			name: 'figure',
+			name: 'ogImage',
 			type: 'figure'
 		},
 		slugWithType(),

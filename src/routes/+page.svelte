@@ -20,11 +20,20 @@
 <Somerset
 	title={data.title}
 	description={data.description}
+	canonical={$page.url}
 	openGraph={{
 		type: 'website',
 		url: $page.url,
 		title: data.title,
-		description: data.description
+		description: data.description,
+		images: [
+			{
+				url: data.ogImage.image.facebook,
+				width: 1200,
+				height: 630,
+				alt: data.ogImage.alt
+			}
+		]
 	}}
 />
 

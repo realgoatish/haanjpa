@@ -42,3 +42,24 @@ export const processBlockImageUrls = (imageObjects) => {
 
 	return newImageObjects;
 };
+
+export const processOgImageUrls = (ogImageObject) => {
+	const sanityImageUrl = `${SANITY_BASE_IMAGE_URL}/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${processImageRef(
+		ogImageObject.image.asset._ref
+	)}`;
+
+	const newImageAttribute = {
+		twitter: `${sanityImageUrl}?w=800&h=418&auto=format`,
+		facebook: `${sanityImageUrl}?w=1200&h=630&auto=format`,
+		fullSize: `${sanityImageUrl}?auto=format`,
+		sourceImage: `${sanityImageUrl}`
+	};
+
+	return {
+		// TODO this comment does not apply here since these images aren't used in page body
+		// can't strip out everything but alt & image attrs because PortableText component needs
+		// _key & _type attrs too
+		...ogImageObject,
+		image: newImageAttribute
+	};
+};
