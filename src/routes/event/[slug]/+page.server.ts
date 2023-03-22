@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { eventQuery } from '$lib/js/sanityQueries.server'
 import { client } from '$lib/js/sanityClient.server'
-import { processBlockImageUrls } from '$lib/js/sanityImages.server'
+import { processBlockImageUrls, processOgImageUrls } from '$lib/js/sanityImages.server'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url }) {
@@ -11,7 +11,14 @@ export async function load({ url }) {
 
   const response = await client.fetch(eventQuery(url.pathname)).then(data => {
 
+    // copy the response object
     const mutableData = data
+
+    // get its og:image urls & process them
+    const processedOgImages = processOgImageUrls(mutableData.ogImage)
+
+    // replace the og:image refs with the processed og:image urls
+    mutableData.ogImage = processedOgImages
 
     const processedDescriptions = mutableData?.body?.map((section) => {
 
