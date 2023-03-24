@@ -1,6 +1,7 @@
 export default {
 	name: 'dayOfWeek',
 	type: 'string',
+	title: 'Day of Week',
 	options: {
 		list: [
 			{ title: 'Sunday', value: 'Sunday' },

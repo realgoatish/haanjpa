@@ -1,6 +1,4 @@
-import S from '@sanity/desk-tool/structure-builder';
-
-export default () => {
+export default (S) =>
 	S.list()
 		.title('Content')
 		.items([
@@ -11,4 +9,3 @@ export default () => {
 				(listItem) => !['siteSettings'].includes(listItem.getId())
 			)
 		]);
-};
