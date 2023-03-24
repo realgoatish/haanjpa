@@ -1,4 +1,5 @@
 export default {
 	name: 'timeOfDay',
-	type: 'string'
+	type: 'string',
+	title: 'Time of Day'
 };

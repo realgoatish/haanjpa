@@ -1,34 +1,31 @@
 {
-  "name": "haanjpa",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)",
-  "main": "package.json",
-  "author": "Mike Lamb <mflambjr@gmail.com>",
-  "license": "UNLICENSED",
-  "scripts": {
-    "start": "sanity start",
-    "build": "sanity build"
-  },
-  "keywords": [
-    "sanity"
-  ],
-  "dependencies": {
-    "@sanity/base": "^2.35.7",
-    "@sanity/core": "^2.35.7",
-    "@sanity/default-layout": "^2.35.7",
-    "@sanity/default-login": "^2.35.7",
-    "@sanity/desk-tool": "^2.35.7",
-    "@sanity/eslint-config-studio": "^2.0.1",
-    "@sanity/vision": "^2.35.7",
-    "eslint": "^8.6.0",
-    "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
-    "styled-components": "^5.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/realgoatish/haanjpa.git"
-  }
+	"name": "haanjpa",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)",
+	"main": "package.json",
+	"author": "Mike Lamb <mflambjr@gmail.com>",
+	"license": "UNLICENSED",
+	"scripts": {
+		"start": "sanity start",
+		"build": "sanity build",
+		"dev": "sanity dev"
+	},
+	"keywords": [
+		"sanity"
+	],
+	"dependencies": {
+		"@sanity/eslint-config-studio": "^2.0.1",
+		"@sanity/vision": "^3.7.1",
+		"eslint": "^8.6.0",
+		"prop-types": "^15.8.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"sanity": "^3.7.1",
+		"styled-components": "^5.3.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/realgoatish/haanjpa.git"
+	}
 }
