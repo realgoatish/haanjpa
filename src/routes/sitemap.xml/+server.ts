@@ -5,6 +5,8 @@ export async function GET({url}) {
 
   const sitemapQueryResponse = await client.fetch(sitemapQuery())
 
+  // TODO - you need to include image:loc tags for images on pages. also find a way to associate images with slugs
+  // in the CMS so we don't have to keep wrangling with this
   return new Response(
     `
     <?xml version="1.0" encoding="UTF-8" ?>
