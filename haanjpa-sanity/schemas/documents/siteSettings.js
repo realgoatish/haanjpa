@@ -1,18 +1,12 @@
 export default {
 	name: 'siteSettings',
 	type: 'document',
-	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	title: 'Global Site Settings',
 	fields: [
 		{
-			name: 'title',
-			type: 'string',
-			title: 'Site Name'
-		},
-		{
-			name: 'description',
-			type: 'string',
-			title: 'Site Description'
+			name: 'organization',
+			title: 'Organization SEO (site-wide)',
+			type: 'seoOrganization'
 		},
 		{
 			name: 'logo',

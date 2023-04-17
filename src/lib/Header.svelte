@@ -17,8 +17,8 @@
 				<Frame>
 					<img
 						alt={data.logo.alt}
-						srcset={`${data.logo.images.tablet} 800w, ${data.logo.images.mobile} 400w`}
-						src={data.logo.images.fullSize}
+						srcset={`${data.logo.image.tablet} 400w, ${data.logo.image.mobile} 200w`}
+						src={data.logo.image.fullSize}
 						sizes="50vw"
 					/>
 				</Frame>

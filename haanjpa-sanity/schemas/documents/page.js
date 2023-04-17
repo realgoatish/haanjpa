@@ -12,6 +12,13 @@ export default {
 			initialValue: false
 		},
 		{
+			name: 'webPageSeo',
+			title: 'Page SEO Data',
+			description:
+				'Data about this page for search results and thumbnail presentation when you share links to the page on e.g. social media. This data does not effect anything visible on the page',
+			type: 'seoPage'
+		},
+		{
 			name: 'title',
 			type: 'string',
 			title: 'Title'
@@ -20,10 +27,6 @@ export default {
 			name: 'description',
 			type: 'string',
 			title: 'Short Page Description'
-		},
-		{
-			name: 'ogImage',
-			type: 'figure'
 		},
 		slugWithType(),
 		{
