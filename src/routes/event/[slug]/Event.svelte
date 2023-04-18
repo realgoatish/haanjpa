@@ -3,6 +3,8 @@
 	import { H } from 'tusculum';
 	import { PortableText } from '@portabletext/svelte';
 	import FlyerFigure from '$lib/FlyerFigure.svelte';
+	import ListWrapper from '$lib/ListWrapper.svelte';
+	import ListItemWrapper from '$lib/ListItemWrapper.svelte';
 
 	export let portableText;
 
@@ -29,6 +31,14 @@
 			components={{
 				types: {
 					figure: FlyerFigure
+				},
+				list: {
+					bullet: ListWrapper,
+					number: ListWrapper
+				},
+				listItem: {
+					bullet: ListItemWrapper,
+					number: ListItemWrapper
 				}
 			}}
 		/>
