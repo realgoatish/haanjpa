@@ -1,11 +1,10 @@
 export const processLayout = (data) => {
 	// console.log(`raw data at beginning of processLayout: ${JSON.stringify(data, null, 2)}`);
 
-	const { description, navigationSections, title, organization, logo } = data;
+	// const { description, navigationSections, title, organization, logo } = data;
+	const { navigationSections, organization, logo } = data;
 
 	const processedData = {
-		title,
-		description,
 		organization,
 		logo,
 		navigationSections
