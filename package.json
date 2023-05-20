@@ -48,6 +48,7 @@
 		"sanity": "^3.11.1",
 		"slug": "^8.0.0",
 		"somerset": "^0.0.2",
+		"styled-components": "^5.3.10",
 		"tusculum": "^0.0.17"
 	}
 }
