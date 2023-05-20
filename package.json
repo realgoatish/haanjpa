@@ -42,6 +42,7 @@
 		"@fontsource/open-sans": "^4.5.11",
 		"@realgoatish/svelte-every-layout": "^0.0.23",
 		"@sanity/client": "^3.4.1",
+		"@sanity/vision": "^3.11.1",
 		"sanity": "^3.11.1",
 		"slug": "^8.0.0",
 		"somerset": "^0.0.2",
