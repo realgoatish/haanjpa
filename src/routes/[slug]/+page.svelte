@@ -13,23 +13,28 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
+
+	const { webPageSeo } = data;
+	const { openGraph } = webPageSeo;
 </script>
 
 <Somerset
-	title={data.title}
-	description={data.description}
+	title={webPageSeo.title}
+	description={webPageSeo.description}
 	canonical={$page.url}
 	openGraph={{
 		type: 'website',
 		url: $page.url,
-		title: data.title,
-		description: data.description,
+		title: openGraph.title,
+		description: openGraph.description,
+		locale: 'en_US',
+		siteName: openGraph.siteName,
 		images: [
 			{
-				url: data.ogImage.image.facebook,
+				url: openGraph.ogImage.image.facebook,
 				width: 1200,
 				height: 630,
-				alt: data.ogImage.alt
+				alt: openGraph.ogImage.alt
 			}
 		]
 	}}

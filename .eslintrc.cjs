@@ -15,7 +15,8 @@ module.exports = {
 		'import/extensions': 0,
 		'import/no-unresolved': 0,
 		'import/first': 0,
-		'no-underscore-dangle': 0
+		'no-underscore-dangle': 0,
+		'arrow-body-style': 0
 	},
 	parserOptions: {
 		sourceType: 'module',

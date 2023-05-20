@@ -1,6 +1,59 @@
+export const layoutQuery = () => `*[_type == "siteSettings"]{
+  title,
+  description,
+  logo{
+    ...,
+    ...(image.asset-> {
+      "image": {
+        "mobile": url + "?w=200&auto=format",
+        "tablet": url + "?w=400&auto=format",
+        "fullSize": url + "?auto=format"
+      }
+    })
+  },
+  organization{
+    ...,
+    logo{
+      ...,
+      ...(image.asset-> {
+        "image": {
+          "fullSize": url
+        }
+      })
+    }
+  },
+  navigationSections[]{
+    _type == "navigationReference" => @->{
+      items[]{
+        text,
+        "href": navigationItemUrl.internalLink->slug.current
+      },
+      title,
+      "slug": navigationId.current
+    }
+  }
+}[0]`;
+
 // TODO you'll have to query this by some field that's not editable long-term
 export const homePageQuery = `*[_type == "page" && title == "Welcome to HAANJPA.ORG"]{
   ...,
+  webPageSeo{
+    ...,
+    openGraph{
+      ...,
+      ogImage{
+        ...,
+        ...(image.asset-> {
+          "image": {
+            "twitter": url + "?w=800&h=418&auto=format",
+            "facebook": url + "?w=1200&h=630&auto=format",
+            "fullSize": url + "?auto=format",
+            "sourceImage": url
+          }
+        })
+      }
+    }
+  },
   body[]{
     ...,
     _type == "figure" => {
@@ -19,39 +72,85 @@ export const homePageQuery = `*[_type == "page" && title == "Welcome to HAANJPA.
   }
 }[0]`;
 
-export const layoutQuery = () => `*[_type == "siteSettings"]{
-  title,
-  description,
-  logo{
-    alt,
-    "unprocessedImageUrl": image.asset._ref
-  },
-  navigationSections[]{
-    _type == "navigationReference" => @->{
-      items[]{
-        text,
-        "href": navigationItemUrl.internalLink->slug.current
-      },
-      title,
-      "slug": navigationId.current
-    }
-  }
-}[0]`;
-
 export const eventQuery = (slug) =>
 	`*[_type == "page" && slug.current == "${slug}" && event == true]{
     ...,
+    webPageSeo{
+      ...,
+      openGraph{
+        ...,
+        ogImage{
+          ...,
+          ...(image.asset-> {
+            "image": {
+              "twitter": url + "?w=800&h=418&auto=format",
+              "facebook": url + "?w=1200&h=630&auto=format",
+              "fullSize": url + "?auto=format",
+              "sourceImage": url
+            }
+          })
+        }
+      }
+    },
     body[]{
       ...,
-      _type == 'eventReference' => @->
+      _type == 'eventReference' => @->{
+        ...,
+        title,
+        date,
+        description[]{
+          ...,
+          _type == "figure" => {
+            ...,
+            ...(image.asset-> {
+              "image": {
+                "mobile": url + "?w=800&auto=format",
+                "tablet": url + "?w=1600&auto=format",
+                "desktop": url + "?w=2400&auto=format",
+                "fullSize": url + "?auto=format",
+                "sourceImage": url
+              }
+            })
+          }
+        }
+      }
     }
   }[0]`;
 
 export const slugQuery = (slug) =>
 	`*[_type == "page" && slug.current == "${slug}" && event != true]{
     ...,
+    webPageSeo{
+      ...,
+      openGraph{
+        ...,
+        ogImage{
+          ...,
+          ...(image.asset-> {
+            "image": {
+              "twitter": url + "?w=800&h=418&auto=format",
+              "facebook": url + "?w=1200&h=630&auto=format",
+              "fullSize": url + "?auto=format",
+              "sourceImage": url
+            }
+          })
+        }
+      }
+    },
     body[]{
       ...,
+      _type == "figure" => {
+        ...,
+        ...(image.asset-> {
+          "image": {
+            "mobile": url + "?w=800&auto=format",
+            "tablet": url + "?w=1600&auto=format",
+            "desktop": url + "?w=2400&auto=format",
+            "fullSize": url + "?auto=format",
+            "sourceImage": url
+          }
+        })
+      },
       _type == "navigationReference" => @->{
         title,
         description,

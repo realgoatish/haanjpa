@@ -13,6 +13,12 @@ import state from './strings/state';
 import dayOfWeek from './strings/dayOfWeek';
 import timeOfDay from './strings/timeOfDay';
 import morningOrNight from './strings/morningOrNight';
+import urlArray from './arrays/urlArray';
+import contactPoint from './objects/contactPoint';
+import seoOrganization from './objects/seoOrganization';
+import address from './objects/address';
+import seoPage from './objects/seoPage';
+import seoOpenGraph from './objects/seoOpenGraph';
 
 export const schemaTypes = [
 	siteSettings,
@@ -29,5 +35,11 @@ export const schemaTypes = [
 	state,
 	dayOfWeek,
 	timeOfDay,
-	morningOrNight
+	morningOrNight,
+	urlArray,
+	contactPoint,
+	seoOrganization,
+	address,
+	seoOpenGraph,
+	seoPage
 ];

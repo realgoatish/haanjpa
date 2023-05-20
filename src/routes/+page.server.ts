@@ -1,18 +1,15 @@
 import { error } from '@sveltejs/kit';
 import { homePageQuery } from '$lib/js/sanityQueries.server'
 import { client } from '$lib/js/sanityClient.server'
-import { processOgImageUrls } from '$lib/js/sanityImages.server'
+import { processPage } from '$lib/js/processEndpoints.server'
+
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
 
-	// const response = await client.fetch(homePageQuery)
   const response = await client.fetch(homePageQuery).then(data => {
-    const processedOgImages = processOgImageUrls(data.ogImage)
 
-    data.ogImage = processedOgImages
-
-    return data
+    return processPage(data)
   })
 
 	if (response) {

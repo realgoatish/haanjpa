@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { eventQuery } from '$lib/js/sanityQueries.server'
 import { client } from '$lib/js/sanityClient.server'
-import { processBlockImageUrls, processOgImageUrls } from '$lib/js/sanityImages.server'
+import { processEventPage } from '$lib/js/processEndpoints.server'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url }) {
@@ -11,42 +11,8 @@ export async function load({ url }) {
 
   const response = await client.fetch(eventQuery(url.pathname)).then(data => {
 
-    // copy the response object
-    const mutableData = data
+    return processEventPage(data)
 
-    // get its og:image urls & process them
-    const processedOgImages = processOgImageUrls(mutableData.ogImage)
-
-    // replace the og:image refs with the processed og:image urls
-    mutableData.ogImage = processedOgImages
-
-    const processedDescriptions = mutableData?.body?.map((section) => {
-
-      const descriptionImages = section?.description?.filter((item) => item?._type === 'figure' && item?.image)
-
-      if (!descriptionImages?.length) {
-        return section
-      }
-
-      console.log(`descriptionImages before transformation: ${JSON.stringify(descriptionImages, null, 2)}`)
-
-      const processedDescriptionImages = processBlockImageUrls(descriptionImages)
-
-      console.log(`processedDescriptionImages after transformation: ${JSON.stringify(processedDescriptionImages, null, 2)}`)
-
-      section.description = section.description.map((obj) => processedDescriptionImages.find((o) => o._key === obj._key) || obj)
-
-      return section
-
-    })
-
-    const newBody = mutableData?.body?.map((obj) => processedDescriptions.find((o) => o._key === obj._key) || obj);
-
-    mutableData.body = newBody
-
-    console.log(`DATA: ${JSON.stringify(mutableData, null, 2)}`)
-
-    return mutableData
   })
 
 	if (response) {
