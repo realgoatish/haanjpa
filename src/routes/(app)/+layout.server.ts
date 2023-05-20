@@ -8,7 +8,7 @@ import { client } from '$lib/config/sanity/sanityClient.server'
 import { processLayout } from '$lib/js/processEndpoints.server'
 
 export const trailingSlash = 'always'
-// export const csr = false
+export const csr = false
 
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
