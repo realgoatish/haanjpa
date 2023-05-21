@@ -13,7 +13,7 @@ export async function GET({url}) {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     ${sitemapQueryResponse.map(item => `
       <url>
-        <loc>${url.origin}${item.slug.current}</loc>
+        <loc>${url.origin}${item.slug}</loc>
         <priority>0.85</priority>
       </url>`).join("")}
     </urlset>`.trim(),

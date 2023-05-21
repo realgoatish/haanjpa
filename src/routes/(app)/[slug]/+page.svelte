@@ -57,7 +57,9 @@
 				<BreadcrumbNav />
 				<h1>{data.title}</h1>
 
-				<TableOfContents body={data.body} />
+				{#key data.body}
+					<TableOfContents body={data.body} />
+				{/key}
 
 				<PortableText
 					value={data.body}
