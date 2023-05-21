@@ -16,11 +16,11 @@
 	$: items = value.items;
 
 	$: tableData = {
-		headers: ['Group', 'Day', 'Time', 'AM/PM', 'City', 'State', 'Address'],
+		headers: ['Day', 'Group', 'Time', 'AM/PM', 'City', 'State', 'Address'],
 		rows: items.map((item) =>
 			Array.of(
-				item.title,
 				item.dayOfWeek,
+				item.title,
 				item.timeOfDay,
 				item.morningOrNight,
 				item.city,
