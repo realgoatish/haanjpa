@@ -27,7 +27,7 @@ export default {
 			title: 'OG Image',
 			description: 'Sharing Thumbnail Image(s)',
 			type: 'figure'
-		},
+		}
 		// {
 		// 	name: 'locale',
 		// 	title: 'Locale',
@@ -36,10 +36,5 @@ export default {
 		// 	type: 'string',
 		// 	initialValue: 'en_US'
 		// },
-		{
-			name: 'siteName',
-			title: 'Site Name',
-			type: 'string'
-		}
 	]
 };
