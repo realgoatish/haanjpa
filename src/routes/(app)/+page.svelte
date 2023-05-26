@@ -2,7 +2,6 @@
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
 	import { PortableText } from '@portabletext/svelte';
 	import { Somerset } from 'somerset';
-	import { page } from '$app/stores';
 	import Figure from '$lib/components/Figure.svelte';
 	import HomeNavigationWidget from './HomeNavigationWidget.svelte';
 
@@ -22,10 +21,10 @@
 <Somerset
 	title={webPageSeo.title}
 	description={webPageSeo.description}
-	canonical={$page.url}
+	canonical={`${organization.url}${data.slug}`}
 	openGraph={{
 		type: 'website',
-		url: $page.url,
+		url: `${organization.url}${data.slug}`,
 		title: openGraph.title,
 		description: openGraph.description,
 		locale: 'en_US',
