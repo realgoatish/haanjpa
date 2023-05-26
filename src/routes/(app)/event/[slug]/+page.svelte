@@ -14,7 +14,7 @@
 
 	// $: console.log(`data on Event page: ${JSON.stringify(data, null, 2)}`);
 
-	const { webPageSeo } = data;
+	const { webPageSeo, organization } = data;
 	const { openGraph } = webPageSeo;
 </script>
 
@@ -28,7 +28,7 @@
 		title: openGraph.title,
 		description: openGraph.description,
 		locale: 'en_US',
-		siteName: openGraph.siteName,
+		siteName: organization.name,
 		images: [
 			{
 				url: openGraph.ogImage.image.facebook,
