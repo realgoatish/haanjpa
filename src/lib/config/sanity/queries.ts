@@ -185,7 +185,10 @@ export const slugPageQuery = groq`*[_type == "page" && slug.current == $slug && 
     ${pageFields}
   }`;
 
-export const sitemapQuery = () =>
-	`*[_type == "page"]{
-    "slug": slug.current
-  }`;
+// for more on filtering arrays to access deeply nested properties in GROQ, see: https://blog.novacare.no/filtering-an-array-for-specific-types-with-groq/
+export const sitemapQuery = () => groq`
+*[_type == "page"]{
+  "slug": slug.current,
+  "bodyEventImages": body[@._type == "eventReference"]->.description[@._type == "figure"].image.asset->url,
+  "bodyImages": body[@._type == "figure"].image.asset->url
+}`;
