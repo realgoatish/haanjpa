@@ -2,7 +2,6 @@
 	import { PortableText } from '@portabletext/svelte';
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
 	import { Somerset, BreadcrumbJsonLd } from 'somerset';
-	import { page } from '$app/stores';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import HeadingWrapper from '$lib/components/HeadingWrapper.svelte';
 	import BreadcrumbNav from '$lib/components/BreadcrumbNav.svelte';
@@ -14,21 +13,21 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	const { webPageSeo } = data;
+	const { webPageSeo, organization } = data;
 	const { openGraph } = webPageSeo;
 </script>
 
 <Somerset
 	title={webPageSeo.title}
 	description={webPageSeo.description}
-	canonical={$page.url}
+	canonical={`${organization.url}${data.slug}`}
 	openGraph={{
 		type: 'website',
-		url: $page.url,
+		url: `${organization.url}${data.slug}`,
 		title: openGraph.title,
 		description: openGraph.description,
 		locale: 'en_US',
-		siteName: openGraph.siteName,
+		siteName: organization.name,
 		images: [
 			{
 				url: openGraph.ogImage.image.facebook,
@@ -45,7 +44,7 @@
 		{
 			position: 1,
 			name: 'Home',
-			item: `${$page.url.origin}/`
+			item: `${organization.url}/`
 		}
 	]}
 />

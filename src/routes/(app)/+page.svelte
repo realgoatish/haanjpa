@@ -2,7 +2,6 @@
 	import { Center, Stack } from '@realgoatish/svelte-every-layout';
 	import { PortableText } from '@portabletext/svelte';
 	import { Somerset } from 'somerset';
-	import { page } from '$app/stores';
 	import Figure from '$lib/components/Figure.svelte';
 	import HomeNavigationWidget from './HomeNavigationWidget.svelte';
 
@@ -13,24 +12,23 @@
 
 	const hero = data.body.filter((item) => item._type !== 'navigationReference');
 
-	$: console.log(`homePage data on the front end: ${JSON.stringify(data, null, 2)}`);
-	// $: console.log(`$page on homePage: ${JSON.stringify($page, null, 2)}`);
+	// $: console.log(`homePage data on the front end: ${JSON.stringify(data, null, 2)}`);
 
-	const { webPageSeo } = data;
+	const { webPageSeo, organization } = data;
 	const { openGraph } = webPageSeo;
 </script>
 
 <Somerset
 	title={webPageSeo.title}
 	description={webPageSeo.description}
-	canonical={$page.url}
+	canonical={`${organization.url}${data.slug}`}
 	openGraph={{
 		type: 'website',
-		url: $page.url,
+		url: `${organization.url}${data.slug}`,
 		title: openGraph.title,
 		description: openGraph.description,
 		locale: 'en_US',
-		siteName: openGraph.siteName,
+		siteName: organization.name,
 		images: [
 			{
 				url: openGraph.ogImage.image.facebook,

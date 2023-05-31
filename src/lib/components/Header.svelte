@@ -16,7 +16,7 @@
 			<div slot="first-child" class="logo-wrapper">
 				<Frame>
 					<img
-						alt={data.logo.alt}
+						alt=""
 						srcset={`${data.logo.image.tablet} 400w, ${data.logo.image.mobile} 200w`}
 						src={data.logo.image.fullSize}
 						sizes="50vw"
