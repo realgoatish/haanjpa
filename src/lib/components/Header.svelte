@@ -1,5 +1,5 @@
 <script>
-	import { Center, Frame, Sidebar } from '@realgoatish/svelte-every-layout';
+	import { Center, Frame, Sidebar } from 'svelte-every-layout';
 	import Nav from './Nav.svelte';
 
 	export let data;

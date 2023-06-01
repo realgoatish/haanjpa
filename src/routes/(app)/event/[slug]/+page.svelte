@@ -1,6 +1,6 @@
 <script>
 	import { PortableText } from '@portabletext/svelte';
-	import { Center, Stack } from '@realgoatish/svelte-every-layout';
+	import { Center, Stack } from 'svelte-every-layout';
 	import { Somerset, BreadcrumbJsonLd } from 'somerset';
 	import Figure from '$lib/components/Figure.svelte';
 	import Event from './Event.svelte';

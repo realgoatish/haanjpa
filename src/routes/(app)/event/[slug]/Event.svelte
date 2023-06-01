@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Stack } from '@realgoatish/svelte-every-layout';
+	import { Stack } from 'svelte-every-layout';
 	import { H } from 'tusculum';
 	import { PortableText } from '@portabletext/svelte';
 	import FlyerFigure from '$lib/components/FlyerFigure.svelte';
