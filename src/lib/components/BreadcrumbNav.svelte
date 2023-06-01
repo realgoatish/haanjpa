@@ -1,6 +1,6 @@
 <script>
 	import { H } from 'tusculum';
-	import { Cluster } from '@realgoatish/svelte-every-layout';
+	import { Cluster } from 'svelte-every-layout';
 	import { page } from '$app/stores';
 
 	// $: console.log(`$page: ${JSON.stringify($page, null, 2)}`);

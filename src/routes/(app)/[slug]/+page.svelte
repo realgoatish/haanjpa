@@ -1,6 +1,6 @@
 <script>
 	import { PortableText } from '@portabletext/svelte';
-	import { Center, Stack } from '@realgoatish/svelte-every-layout';
+	import { Center, Stack } from 'svelte-every-layout';
 	import { Somerset, BreadcrumbJsonLd } from 'somerset';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import HeadingWrapper from '$lib/components/HeadingWrapper.svelte';
