@@ -17,6 +17,8 @@
 		"@portabletext/svelte": "^2.0.0",
 		"@sveltejs/adapter-vercel": "1.0.0",
 		"@sveltejs/kit": "1.18.0",
+		"@types/react": "^18.2.18",
+		"@types/react-dom": "^18.2.7",
 		"@types/slug": "^5.0.3",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -41,6 +43,8 @@
 	"dependencies": {
 		"@fontsource/open-sans": "^4.5.11",
 		"@sanity/client": "^3.4.1",
+		"@sanity/groq-store": "^4.0.2",
+		"@sanity/ui": "^1.7.4",
 		"@sanity/vision": "^3.11.1",
 		"groq": "^3.11.1",
 		"react": "^18.2.0",

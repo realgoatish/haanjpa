@@ -83,6 +83,14 @@ export const homePageQuery = `*[_type == "page" && title == "Heroin Anonymous of
   ${homePageFields}
 }`;
 
+export const homePagePreviewQuery = groq`*[_type == "page" && title == "Heroin Anonymous of New Jersey and Pennsylvania"] | order(date desc, _updatedAt desc) [0] {
+  ${homePageFields}
+}`
+
+export const pageSlugQuery = groq`*[_type == "page" && slug.current == $slug] [0] {
+  "slug": slug.current
+}`
+
 export const eventPageFields = groq`
   ...,
   "slug": slug.current,
@@ -129,6 +137,10 @@ export const eventPageFields = groq`
 `
 
 export const eventPageQuery = groq`*[_type == "page" && slug.current == $slug && event == true] [0] {
+  ${eventPageFields}
+}`
+
+export const eventPagePreviewQuery = groq`*[_type == "page" && slug.current == $slug && event == true] | order(date desc, _updatedAt desc) [0] {
   ${eventPageFields}
 }`
 
@@ -184,6 +196,10 @@ const pageFields = groq`
 export const slugPageQuery = groq`*[_type == "page" && slug.current == $slug && event != true] [0] {
     ${pageFields}
   }`;
+
+export const SlugPagePreviewQuery = groq`*[_type == "page" && slug.current == $slug && event != true] | order(date desc, _updatedAt desc) [0] {
+  ${pageFields}
+}`
 
 // for more on filtering arrays to access deeply nested properties in GROQ, see: https://blog.novacare.no/filtering-an-array-for-specific-types-with-groq/
 export const sitemapQuery = () => groq`
