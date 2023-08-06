@@ -1,16 +1,24 @@
-<script>
+<script lang="ts">
+	import { OrganizationJsonLd } from 'somerset';
+	import { page } from '$app/stores';
 	import '../../app.css';
 	import '@fontsource/open-sans';
-	import { OrganizationJsonLd } from 'somerset';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import PreviewBanner from '$lib/components/PreviewBanner.svelte';
+	import type { LayoutData } from '../$types';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: LayoutData;
+
+	/**
+	 * Only show the preview banner on the following route id's.
+	 */
+	const previewRouteIds = ['/(app)', '/(app)/[slug]'];
+
+	$: ({ previewMode, previewModeEmbed: embedded } = data);
+	$: showPreviewBanner = previewMode && previewRouteIds.includes($page.route.id || '');
 
 	$: ({ logo, navigationSections, organization } = data);
-
-	// $: console.log(`layout data on front end: ${JSON.stringify(data, null, 2)}`);
 </script>
 
 <OrganizationJsonLd
@@ -29,6 +37,10 @@
 	sameAs={organization.sameAs}
 	url={organization.url}
 />
+
+{#if showPreviewBanner}
+	<PreviewBanner {embedded} />
+{/if}
 
 <Header data={{ logo, navigationSections }} />
 <slot />

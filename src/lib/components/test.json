@@ -1,0 +1,242 @@
+$page: {
+  "error": null,
+  "params": {
+    "slug": "about-ha"
+  },
+  "route": {
+    "id": "/(app)/[slug]"
+  },
+  "status": 200,
+  "url": "http://localhost:5173/about-ha/",
+  "data": {
+    "organization": {
+      "_type": "seoOrganization",
+      "name": "Heroin Anonymous of New Jersey and Pennsylvania",
+      "description": "Heroin Anonymous Area of New Jersey and Pennsylvania. Heroin Anonymous is a non-profit fellowship of men and women who have found a solution to heroin addiction.",
+      "logo": {
+        "image": {
+          "fullSize": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/678d7cd95633067c6cb0f2ac64be6a93e92fd849-963x947.jpg"
+        },
+        "_type": "figure",
+        "alt": "Heroin Anonymous Logo with subtext, \"No more suffering\""
+      },
+      "url": "https://www.haanjpa.org",
+      "sameAs": [
+        "https://www.facebook.com/groups/631786331532342"
+      ],
+      "address": {
+        "_type": "address",
+        "addressLocality": "Merchantville",
+        "addressRegion": "NJ",
+        "addressCountry": "US",
+        "streetAddress": "DO NOT USE THIS ADDRESS B/C GOOGLE PENALIZES FOR USING P.O. BOX",
+        "postalCode": "08109"
+      },
+      "contactPoints": [
+        {
+          "contactType": "General Inquiries",
+          "telephone": "+18563209088",
+          "_key": "5c4af21e960f",
+          "email": "info@haanjpa.org",
+          "_type": "contactPoint"
+        }
+      ]
+    },
+    "logo": {
+      "image": {
+        "mobile": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/6c8c1bcd047900d56ca22785f499bd2725a032c2-420x420.png?w=200&auto=format",
+        "tablet": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/6c8c1bcd047900d56ca22785f499bd2725a032c2-420x420.png?w=400&auto=format",
+        "fullSize": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/6c8c1bcd047900d56ca22785f499bd2725a032c2-420x420.png?auto=format"
+      },
+      "_type": "figure",
+      "alt": "Heroin Anonymous Logo with subtext, \"No more suffering\""
+    },
+    "navigationSections": [
+      {
+        "items": [
+          {
+            "text": "Meeting List",
+            "href": "/meeting-list/"
+          },
+          {
+            "text": "About H.A.",
+            "href": "/about-ha/"
+          },
+          {
+            "text": "H.A.W.S. Resources",
+            "href": "/haws-resources/"
+          },
+          {
+            "text": "Start A Meeting",
+            "href": "/start-a-meeting/"
+          },
+          {
+            "text": "Contact Us",
+            "href": "/contact-us/"
+          }
+        ],
+        "title": "Topics",
+        "slug": "topics"
+      },
+      {
+        "items": [
+          {
+            "text": "Upcoming Area Meeting",
+            "href": "/event/area-meeting/"
+          }
+        ],
+        "title": "HAANJPA Activity",
+        "slug": "haanjpa-activity"
+      }
+    ],
+    "previewModeEmbed": false,
+    "previewMode": false,
+    "slug": "/about-ha/",
+    "initialData": {
+      "_createdAt": "2022-09-04T04:06:19Z",
+      "_type": "page",
+      "_rev": "DmdoElhEmiPkgfLSjMiCvq",
+      "_updatedAt": "2023-05-26T03:06:48Z",
+      "slug": "/about-ha/",
+      "description": "Purpose and history of Heroin Anonymous",
+      "_id": "a127544e-0ecc-4450-be86-d04f698a221e",
+      "title": "About H.A.",
+      "webPageSeo": {
+        "_type": "seoPage",
+        "description": "Purpose and history of Heroin Anonymous",
+        "openGraph": {
+          "_type": "seoOpenGraph",
+          "description": "Purpose and history of Heroin Anonymous",
+          "title": "About H.A.",
+          "ogImage": {
+            "image": {
+              "twitter": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/fe994c3748fc9e7623d065348cb8708d1e395a13-5610x3740.jpg?w=800&h=418&auto=format",
+              "facebook": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/fe994c3748fc9e7623d065348cb8708d1e395a13-5610x3740.jpg?w=1200&h=630&auto=format",
+              "fullSize": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/fe994c3748fc9e7623d065348cb8708d1e395a13-5610x3740.jpg?auto=format",
+              "sourceImage": "https://cdn.sanity.io/images/78gybhkq/haanjpa-dataset/fe994c3748fc9e7623d065348cb8708d1e395a13-5610x3740.jpg"
+            },
+            "_type": "figure",
+            "alt": "a winding road in the desert leading toward a mountain range"
+          }
+        },
+        "title": "About H.A."
+      },
+      "body": [
+        {
+          "style": "h2",
+          "_key": "a48e60d46910",
+          "markDefs": [],
+          "children": [
+            {
+              "text": "What Is Heroin Anonymous?",
+              "_key": "a32584bdf8330",
+              "_type": "span",
+              "marks": []
+            }
+          ],
+          "_type": "block"
+        },
+        {
+          "_key": "663371deaa79",
+          "markDefs": [],
+          "children": [
+            {
+              "marks": [],
+              "text": "Heroin Anonymous is a non-profit fellowship of men and women who have found a solution to heroin addiction. We are recovered heroin addicts who meet regularly to help each other stay sober. The only requirement for membership is a desire to stop suffering from heroin addiction. There are no dues or fees for H.A. membership. H.A. is not allied with any sect, denomination, politics, organization or institution; does not wish to engage in any controversy and neither endorses nor opposes any causes. Our primary purpose is to stay sober and help other heroin addicts to achieve sobriety.",
+              "_key": "9cf9a8d98ef5",
+              "_type": "span"
+            }
+          ],
+          "_type": "block",
+          "style": "normal"
+        },
+        {
+          "style": "normal",
+          "_key": "179793a21770",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "9b425001f0380",
+              "_type": "span",
+              "marks": [],
+              "text": "Heroin Anonymous is concerned solely with the personal recovery and continued sobriety of heroin addicts who turn to us for help. We do not provide drug counseling, medical or psychiatric treatment, chemical dependency treatment, or therapy of any form. Our members consist of individuals who have found a better way of life. We have recovered from our heroin addiction and simply wish to offer help to those who suffer. We are fully self-supporting, we accept voluntary contributions from our members for our expenses, and we respectfully decline outside contributions. Our program of recovery was adapted from the program developed by Alcoholics Anonymous in 1935. We apply the Twelve Steps as done in A.A. (although we are not affiliated with Alcoholics Anonymous), which involves one heroin addict helping another to achieve freedom from their heroin addiction."
+            }
+          ],
+          "_type": "block"
+        },
+        {
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "marks": [],
+              "text": "In our Fellowship you will see one heroin addict helping another, freely passing on their experience to the next person who is desperately searching for an answer to their own heroin addiction.",
+              "_key": "a2b30d4d00950"
+            }
+          ],
+          "_type": "block",
+          "style": "normal",
+          "_key": "328ad0ee50e8"
+        },
+        {
+          "markDefs": [],
+          "children": [
+            {
+              "marks": [],
+              "text": "History of H.A.",
+              "_key": "ea55178c5cc1",
+              "_type": "span"
+            }
+          ],
+          "_type": "block",
+          "style": "h2",
+          "_key": "cfb42bc06f68"
+        },
+        {
+          "children": [
+            {
+              "_type": "span",
+              "marks": [],
+              "text": "Paul F., a sober heroin addict in A.A., received a phone call on July 26, 2004 from Mike S., a fellow heroin addict. Mike asked Paul, “How come there is no Heroin Anonymous?” At that moment it was decided to start H.A. so we heroin addicts could have our own fellowship where we could be with others who truly understood our experience with heroin addiction. On July 28, 2004, Paul and Mike located a place for a meeting and began distributing fliers to all of the heroin addicts they knew in the other 12 step fellowships. They found several sober heroin addicts who were enthusiastic about having their own program.\n",
+              "_key": "1a7ddd1eab1b0"
+            }
+          ],
+          "_type": "block",
+          "style": "normal",
+          "_key": "b7e264bd80a3",
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "style": "normal",
+          "_key": "d29849fdfc5f",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "319395cae5610",
+              "_type": "span",
+              "marks": [],
+              "text": "The first H.A. meeting was held on Thursday, August 12, 2004 at the Hope House, a half-way house for alcoholics and addicts located at 316 N. 11th Way in Phoenix, Arizona. Present were Paul F., Mike S, Nancy R., Tom M., David T., Rebekah B. and Mark T. In that first meeting, Paul F. was elected as the Literature Chairperson and he began writing pamphlets and meeting formats for our fellowship. In no time, more and more H.A. meetings were forming and the Phoenix H.A. Intergroup was established on November 11, 2004.\n"
+            }
+          ]
+        },
+        {
+          "style": "normal",
+          "_key": "78587e139765",
+          "markDefs": [],
+          "children": [
+            {
+              "text": "Ever since, H.A. has grown into a fellowship that spans multiple countries. Thousands of heroin addicts have found sobriety, started new meetings in new places, with new ideas and perspectives. International dialogue is taking place via correspondence, and the fellowship is finding its footing and coming to know itself. Our membership represents a fair cross-section of the population, demonstrating the fact that recovery is available to all, and that we have found a way out that works!",
+              "_key": "805df207724e0",
+              "_type": "span",
+              "marks": []
+            }
+          ],
+          "_type": "block"
+        }
+      ]
+    }
+  },
+  "form": null
+}
+

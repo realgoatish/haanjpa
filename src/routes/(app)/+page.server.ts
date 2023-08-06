@@ -11,8 +11,10 @@ export const load: PageServerLoad = async ({ parent }) => {
 
   if (previewMode) {
     response = await getSanityServerClient(previewMode).fetch(homePagePreviewQuery)
+    console.log(`previewMode query fired!!!!!!`)
   } else if (!previewMode) {
     response = await getSanityServerClient(previewMode).fetch(homePageQuery)
+    console.log(`regular homepage query fired!!!!!!`)
   }
 
   if (!response) {
@@ -20,8 +22,6 @@ export const load: PageServerLoad = async ({ parent }) => {
   }
 
   const processedResponse = processPage(response)
-
-  console.log(`response on server: ${JSON.stringify(processedResponse, null, 2)}`)
 
   // SK adds stuff from the layout to this obj for us
   return {

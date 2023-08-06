@@ -4,17 +4,13 @@
 	import { Somerset } from 'somerset';
 	import Figure from '$lib/components/Figure.svelte';
 	import HomeNavigationWidget from './HomeNavigationWidget.svelte';
-	import { page } from '$app/stores';
 	import type { PageData } from './$types';
 	import { previewSubscription } from '$lib/config/sanity';
 	import { homePagePreviewQuery } from '$lib/config/sanity/queries';
 
-	// /** @type {import('./$types').PageData} */
-	// export let data;
-
 	export let data: PageData;
 
-	$: console.log(`first data on page: ${JSON.stringify(data, null, 2)}`);
+	// $: console.log(`first data on page: ${JSON.stringify(data, null, 2)}`);
 
 	$: ({ initialData, previewMode, slug, organization } = data);
 
@@ -24,7 +20,7 @@
 		enabled: previewMode && !!slug
 	});
 
-	$: console.log(`test data on page: ${JSON.stringify(test, null, 2)}`);
+	// $: console.log(`test data on page: ${JSON.stringify(test, null, 2)}`);
 
 	$: pageData = test?.data || data;
 
@@ -32,7 +28,7 @@
 
 	$: ({ openGraph } = webPageSeo);
 
-	$: console.log(`pageData: ${JSON.stringify(pageData, null, 2)}`);
+	// $: console.log(`pageData: ${JSON.stringify(pageData, null, 2)}`);
 
 	// $: navigation = pageData?.body?.filter(
 	// 	(item) => item._type === 'navigationReference'
