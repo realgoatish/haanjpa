@@ -2,6 +2,7 @@ import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas/schema';
+import { PagePreview } from './components/PagePreview';
 
 export default defineConfig({
 	name: 'haanjpa',
@@ -13,7 +14,18 @@ export default defineConfig({
 		// deskTool({
 		// 	structure: deskStructure
 		// }),
-		deskTool(),
+    deskTool({
+      // `defaultDocumentNode is responsible for adding a “Preview” tab to the document pane.
+			defaultDocumentNode: (S, { schemaType }) => {
+				if (schemaType === 'page') {
+					return S.document().views([
+						S.view.form(),
+						S.view.component(PagePreview).title('Preview')
+					]);
+				}
+				return null;
+			}
+    }),
 		visionTool()
 	],
 	schema: {
