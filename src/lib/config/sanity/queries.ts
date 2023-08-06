@@ -79,11 +79,11 @@ const homePageFields = groq`
 `
 
 // TODO you'll have to query this by some field that's not editable long-term
-export const homePageQuery = `*[_type == "page" && title == "Heroin Anonymous of New Jersey and Pennsylvania"] [0] {
+export const homePageQuery = `*[_type == "page" && slug.current == "/"] [0] {
   ${homePageFields}
 }`;
 
-export const homePagePreviewQuery = groq`*[_type == "page" && title == "Heroin Anonymous of New Jersey and Pennsylvania"] | order(date desc, _updatedAt desc) [0] {
+export const homePagePreviewQuery = groq`*[_type == "page" && slug.current == "/"] | order(date desc, _updatedAt desc) [0] {
   ${homePageFields}
 }`
 
@@ -197,7 +197,7 @@ export const slugPageQuery = groq`*[_type == "page" && slug.current == $slug && 
     ${pageFields}
   }`;
 
-export const SlugPagePreviewQuery = groq`*[_type == "page" && slug.current == $slug && event != true] | order(date desc, _updatedAt desc) [0] {
+export const slugPagePreviewQuery = groq`*[_type == "page" && slug.current == $slug && event != true] | order(date desc, _updatedAt desc) [0] {
   ${pageFields}
 }`
 

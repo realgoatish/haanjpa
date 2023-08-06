@@ -1,29 +1,34 @@
 import { error } from '@sveltejs/kit';
-import { eventPageQuery } from '$lib/config/sanity/queries'
-import { client } from '$lib/config/sanity/sanityClient.server'
+import type { PageServerLoad } from './$types';
+import { eventPageQuery, eventPagePreviewQuery } from '$lib/config/sanity/queries'
+import { getSanityServerClient } from '$lib/config/sanity/sanityClient.server'
 import { processEventPage } from '$lib/js/processEndpoints.server'
 
-/** @type {import('./$types').PageServerLoad} */
-export async function load({ url, params }) {
+export const load: PageServerLoad = async ({ parent, url }) => {
+  const { previewMode } = await parent()
 
-  console.log(`url.pathname in event/[slug]: ${url.pathname}`)
-  console.log(`url.origin in event/[slug]: ${url.origin}`)
+  let response
 
-  // const slug = params?.slug
+  if (previewMode) {
+    response = await getSanityServerClient(previewMode).fetch(eventPagePreviewQuery, {
+      slug: url.pathname
+    })
+  } else if (!previewMode) {
+    response = await getSanityServerClient(previewMode).fetch(eventPageQuery, {
+      slug: url.pathname
+    })
+  }
 
-  console.log(`params in event/[slug]: ${JSON.stringify(params)}`)
+  if (!response) {
+    throw error(404, 'Event Page not found');
+  }
 
-  const response = await client.fetch(eventPageQuery, {
-    slug: url.pathname
-  }).then(data => {
+  const processedResponse = processEventPage(response)
 
-    return processEventPage(data)
-
-  })
-
-	if (response) {
-		return response;
-	}
-
-	throw error(404, 'Not found');
+  // SK adds stuff from the layout to this obj for us
+  return {
+    previewMode,
+    slug: response?.slug || '/',
+    initialData: processedResponse
+  }
 }

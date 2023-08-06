@@ -1,28 +1,32 @@
 import { error } from '@sveltejs/kit';
-// import {
-// 	SANITY_PROJECT_ID,
-// 	SANITY_DATASET
-// } from '$env/static/private';
 import { layoutQuery } from '$lib/config/sanity/queries';
-import { client } from '$lib/config/sanity/sanityClient.server'
+import { getSanityServerClient } from '$lib/config/sanity/sanityClient.server'
 import { processLayout } from '$lib/js/processEndpoints.server'
+import type { PageServerLoad } from './$types';
 
 export const trailingSlash = 'always'
-// export const csr = false
 
-/** @type {import('./$types').LayoutServerLoad} */
-export async function load() {
+export const load: PageServerLoad = async ({ locals: { previewMode }, url }) => {
 
-  const response = await client.fetch(layoutQuery).then(data => {
-    
-    return processLayout(data)
-    
-  });
+  const isPreview = previewMode && url.searchParams.get('isPreview') === 'true'
 
-  if (response) {
-    return response;
+  const response = await getSanityServerClient(false).fetch(layoutQuery).then(data => {
+
+
+    const processedResponse = processLayout(data)
+
+    return processedResponse
+
+  })
+
+	if (!response) {
+    throw error(404, 'Global Layout not found WEASEL WEASEL');
   }
 
-	throw error(404, 'Not found');
+  return {
+    ...response,
+    previewModeEmbed: isPreview,
+    previewMode
+  }
 
 }
